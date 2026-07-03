@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova — See what your data is trying to tell you</title>
+    <meta name="description"
+        content="Nova turns raw product data into clear, confident decisions — in minutes, not sprints." />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0B1120',
+                        surface: '#111827',
+                        elevated: '#1F2937',
+                        primary: '#7C83FF',
+                        secondary: '#2DD4BF',
+                        accent: '#FF7A7A',
+                        text: '#F9FAFB',
+                        muted: '#94A3B8',
+                        border: '#334155',
+                    },
+                    fontFamily: {
+                        display: ['Sora', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-bg text-text font-body antialiased">
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2.5 shrink-0">
+                <span
+                    class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary">
+                    <span
+                        class="absolute inset-0 rounded-lg bg-gradient-to-br from-primary to-secondary blur-md opacity-60"></span>
+                    <svg class="relative h-4 w-4 text-bg" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 18V6l16 12V6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="font-display font-bold text-lg tracking-tight">Nova</span>
+            </a>
+
+            <!-- Desktop nav links -->
+            <ul class="hidden md:flex items-center gap-9 font-body text-sm text-muted">
+                <li><a href="#services" class="nav-link">Platform</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#" class="nav-link">Docs</a></li>
+            </ul>
+
+            <!-- CTA + mobile toggle -->
+            <div class="flex items-center gap-3">
+                <a href="#"
+                    class="hidden md:inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-text border border-border/80 hover:border-primary/60 transition-colors duration-300">
+                    Sign in
+                </a>
+                <a href="#pricing"
+                    class="btn-glow hidden md:inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-bg bg-gradient-to-r from-primary to-secondary">
+                    Start free
+                </a>
+
+                <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+                    class="md:hidden relative h-10 w-10 flex items-center justify-center rounded-lg border border-border/80">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden">
+            <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
+                <a href="#services" class="mobile-link">Platform</a>
+                <a href="#pricing" class="mobile-link">Pricing</a>
+                <a href="#faq" class="mobile-link">FAQ</a>
+                <a href="#" class="mobile-link">Docs</a>
+                <div class="h-px bg-border/60 my-3"></div>
+                <a href="#" class="mobile-link">Sign in</a>
+                <a href="#pricing"
+                    class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold text-bg bg-gradient-to-r from-primary to-secondary">Start
+                    free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scroll progress indicator -->
+    <div id="scrollProgress"
+        class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-primary via-secondary to-accent z-[60]"
+        style="width:0%"></div>
