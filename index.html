@@ -720,3 +720,130 @@
             </div>
         </div>
     </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="relative border-t border-border/50 overflow-hidden">
+
+        <div class="footer-glow"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-10">
+
+            <div class="grid lg:grid-cols-[1.3fr_2fr] gap-14 lg:gap-10">
+
+                <!-- Brand column -->
+                <div>
+                    <a href="#" class="flex items-center gap-2.5 shrink-0 w-fit">
+                        <span
+                            class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary">
+                            <span
+                                class="absolute inset-0 rounded-lg bg-gradient-to-br from-primary to-secondary blur-md opacity-60"></span>
+                            <svg class="relative h-4 w-4 text-bg" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 18V6l16 12V6" stroke="currentColor" stroke-width="2.4"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="font-display font-bold text-lg tracking-tight">Nova</span>
+                    </a>
+                    <p class="mt-5 text-sm text-muted leading-relaxed max-w-xs">
+                        Turns the data your product already produces into a handful of decisions worth making this week.
+                    </p>
+
+                    <!-- Social icons -->
+                    <div class="flex items-center gap-3 mt-7">
+                        <a href="#" aria-label="Nova on X" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Nova on LinkedIn" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 8.98h4V21H3V8.98zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9V8.98z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Nova on GitHub" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2a10 10 0 00-3.16 19.5c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.9-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Link columns -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+
+                    <div>
+                        <p class="footer-heading">Product</p>
+                        <ul class="footer-links">
+                            <li><a href="#services">Platform</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#">Changelog</a></li>
+                            <li><a href="#">Integrations</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="footer-heading">Company</p>
+                        <ul class="footer-links">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="footer-heading">Resources</p>
+                        <ul class="footer-links">
+                            <li><a href="#">Docs</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Status</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="footer-heading">Legal</p>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">DPA</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Newsletter row -->
+            <div class="footer-newsletter">
+                <div>
+                    <p class="font-display font-semibold text-sm text-text">Get product notes, monthly</p>
+                    <p class="text-xs text-muted mt-1">No spam — just what shipped and why it matters.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" required placeholder="you@company.com" class="newsletter-input"
+                        aria-label="Email address" />
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Nova Analytics, Inc. All rights reserved.</p>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="relative flex h-1.5 w-1.5">
+                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary"></span>
+                    </span>
+                    All systems operational
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

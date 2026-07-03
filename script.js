@@ -170,3 +170,31 @@ faqItems.forEach((item) => {
         }
     });
 });
+
+// ============ Footer: current year ============
+const yearEl = document.getElementById('year');
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
+
+// ============ Footer: newsletter form ============
+const newsletterForm = document.getElementById('newsletterForm');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('.newsletter-btn');
+        const input = newsletterForm.querySelector('.newsletter-input');
+        if (!input.value) return;
+
+        const originalText = btn.textContent;
+        btn.textContent = 'Subscribed ✓';
+        btn.classList.add('is-success');
+        input.value = '';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.classList.remove('is-success');
+        }, 2500);
+    });
+}
