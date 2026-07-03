@@ -337,3 +337,230 @@ body {
     left: -6px;
     transform: translateY(-50%);
 }
+
+/* Floating stat cards */
+.stat-card {
+    position: absolute;
+    background: rgba(31, 41, 55, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 18px;
+    padding: 14px 18px;
+    z-index: 20;
+    animation: floatY 6s ease-in-out infinite;
+}
+
+.stat-card-1 {
+    top: 6%;
+    left: -6%;
+    animation-delay: 0s;
+}
+
+.stat-card-2 {
+    bottom: 14%;
+    right: -8%;
+    animation-delay: 1.2s;
+}
+
+.stat-card-3 {
+    bottom: -4%;
+    left: 12%;
+    animation-delay: 2.4s;
+}
+
+@keyframes floatY {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media (max-width: 1023px) {
+    .stat-card-1 {
+        left: 0%;
+    }
+
+    .stat-card-2 {
+        right: 0%;
+    }
+
+    .stat-card-3 {
+        left: 4%;
+    }
+}
+
+@media (max-width: 640px) {
+    .orbit-ring-3 {
+        display: none;
+    }
+
+    .stat-card {
+        padding: 10px 14px;
+    }
+}
+
+/* ============ Scroll reveal ============ */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-reveal].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #7C83FF;
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* ============ Services section ============ */
+.services-glow {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(124, 131, 255, 0.10) 0%, rgba(124, 131, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2DD4BF;
+    position: relative;
+    padding-left: 18px;
+}
+
+.eyebrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 1.5px;
+    background: #2DD4BF;
+}
+
+.service-card {
+    position: relative;
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(51, 65, 85, 0.55);
+    border-radius: 20px;
+    padding: 28px 26px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(124, 131, 255, 0.4), rgba(45, 212, 191, 0) 40%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(124, 131, 255, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 40px rgba(124, 131, 255, 0.12);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.service-icon svg {
+    width: 22px;
+    height: 22px;
+    color: #0B1120;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(-6deg) scale(1.08);
+}
+
+.icon-primary {
+    background: linear-gradient(135deg, #7C83FF, #9CA3FF);
+    box-shadow: 0 0 24px rgba(124, 131, 255, 0.35);
+}
+
+.icon-secondary {
+    background: linear-gradient(135deg, #2DD4BF, #5EEAD4);
+    box-shadow: 0 0 24px rgba(45, 212, 191, 0.3);
+}
+
+.icon-accent {
+    background: linear-gradient(135deg, #FF7A7A, #FFA3A3);
+    box-shadow: 0 0 24px rgba(255, 122, 122, 0.3);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #F9FAFB;
+}
+
+.service-link svg {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-link svg {
+    transform: translateX(4px);
+}
