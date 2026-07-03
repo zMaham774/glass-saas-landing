@@ -61,3 +61,40 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealEls.forEach((el) => revealObserver.observe(el));
+
+// ============ Animated counters ============
+const counters = document.querySelectorAll('.counter');
+
+function animateCounter(el) {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1600;
+    const start = performance.now();
+
+    function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const value = Math.floor(eased * target);
+        el.textContent = value.toLocaleString() + suffix;
+        if (progress < 1) {
+            requestAnimationFrame(tick);
+        } else {
+            el.textContent = target.toLocaleString() + suffix;
+        }
+    }
+    requestAnimationFrame(tick);
+}
+
+const counterObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.5 }
+);
+
+counters.forEach((el) => counterObserver.observe(el));
