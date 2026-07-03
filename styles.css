@@ -859,3 +859,39 @@ button:focus-visible {
     max-height: 260px;
     opacity: 1;
 }
+
+/* ============ CTA panel ============ */
+.cta-panel {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6366F1 0%, #7C83FF 45%, #2DD4BF 100%);
+    isolation: isolate;
+}
+
+.cta-glow-1,
+.cta-glow-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cta-glow-1 {
+    width: 400px;
+    height: 400px;
+    top: -120px;
+    left: -80px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: drift1 14s ease-in-out infinite;
+}
+
+.cta-glow-2 {
+    width: 380px;
+    height: 380px;
+    bottom: -140px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(11, 17, 32, 0.3) 0%, rgba(11, 17, 32, 0) 70%);
+    animation: drift2 18s ease-in-out infinite;
+}
