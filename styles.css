@@ -767,3 +767,95 @@ button:focus-visible {
 .price-value {
     transition: opacity 0.15s ease;
 }
+
+/* ============ FAQ accordion ============ */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(51, 65, 85, 0.55);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item.is-open {
+    border-color: rgba(124, 131, 255, 0.4);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: left;
+    padding: 20px 22px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #F9FAFB;
+    cursor: pointer;
+}
+
+.faq-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #94A3B8;
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s ease, background 0.3s ease;
+}
+
+.faq-icon::before {
+    width: 12px;
+    height: 1.6px;
+}
+
+.faq-icon::after {
+    width: 1.6px;
+    height: 12px;
+}
+
+.faq-item.is-open .faq-icon::before,
+.faq-item.is-open .faq-icon::after {
+    background: #7C83FF;
+}
+
+.faq-item.is-open .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.faq-answer p {
+    padding: 0 22px 20px 22px;
+    font-size: 0.9rem;
+    color: #94A3B8;
+    line-height: 1.65;
+}
+
+.faq-item.is-open .faq-answer {
+    max-height: 260px;
+    opacity: 1;
+}

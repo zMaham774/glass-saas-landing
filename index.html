@@ -576,3 +576,101 @@
             </p>
         </div>
     </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="relative py-28 md:py-36 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-14 lg:gap-20">
+
+                <!-- Left: header -->
+                <div class="reveal" data-reveal>
+                    <p class="eyebrow">FAQ</p>
+                    <h2 class="mt-4 font-display font-extrabold tracking-tight text-3xl sm:text-4xl leading-[1.15]">
+                        Questions worth
+                        <span class="gradient-text">answering upfront.</span>
+                    </h2>
+                    <p class="mt-5 text-muted text-base leading-relaxed max-w-sm">
+                        Can't find what you're looking for? Reach out and a real person on the team will get back to you
+                        within a day.
+                    </p>
+                    <a href="#" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
+                        Contact support
+                        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Right: accordion -->
+                <div class="reveal" data-reveal data-reveal-delay="100">
+                    <div class="faq-list">
+
+                        <div class="faq-item is-open">
+                            <button class="faq-question" aria-expanded="true">
+                                <span>Do I need to change my tracking setup to use Nova?</span>
+                                <span class="faq-icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Nova connects to the event data you already send to your warehouse or analytics
+                                    tool, Segment, Amplitude, Snowflake, and a few others are supported out of the box.
+                                    Most teams are seeing their first insight within a day of connecting.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How does Nova decide what counts as an anomaly?</span>
+                                <span class="faq-icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Nova builds a rolling baseline for every metric from its own history, accounting for
+                                    day-of-week and seasonal patterns, then flags deviations that fall outside a
+                                    confidence band you can tune. You can see the exact baseline and threshold behind
+                                    any alert.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Can I switch plans or cancel at any time?</span>
+                                <span class="faq-icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. Upgrades apply immediately and downgrades or cancellations take effect at the
+                                    end of your current billing period, no calls, no retention flow, just a button in
+                                    account settings.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Is my data used to train models for other customers?</span>
+                                <span class="faq-icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Never. Each workspace's data stays fully isolated, and nothing you send to Nova is
+                                    used to train models shared across other accounts. Details are in our data
+                                    processing agreement, available on request.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Do you offer discounts for startups or nonprofits?</span>
+                                <span class="faq-icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, early-stage startups and registered nonprofits get 50% off the Growth plan for
+                                    the first year. Mention it when you talk to sales or reach out from your work email.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>

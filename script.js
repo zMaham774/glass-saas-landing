@@ -148,3 +148,25 @@ if (billToggle) {
         });
     });
 }
+
+// ============ FAQ accordion ============
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach((item) => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+
+        // close all other items (single-open accordion)
+        faqItems.forEach((other) => {
+            other.classList.remove('is-open');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+            item.classList.add('is-open');
+            question.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
