@@ -444,3 +444,135 @@
             </div>
         </div>
     </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section id="pricing" class="relative py-28 md:py-36 overflow-hidden">
+
+        <div class="pricing-glow"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+
+            <!-- Section header -->
+            <div class="max-w-2xl mx-auto text-center reveal" data-reveal>
+                <p class="eyebrow mx-auto" style="padding-left:0;">
+                    <span class="inline-block w-2 h-2 rounded-full bg-secondary mr-2 align-middle"></span>
+                    Pricing
+                </p>
+                <h2
+                    class="mt-4 font-display font-extrabold tracking-tight text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15]">
+                    Priced for the team you have,
+                    <span class="gradient-text">not the one you might become.</span>
+                </h2>
+                <p class="mt-5 text-muted text-base sm:text-lg leading-relaxed">
+                    Every plan includes anomaly detection and the weekly digest. Upgrade when you need more seats or
+                    more history not because a feature got locked away.
+                </p>
+            </div>
+
+            <!-- Billing toggle -->
+            <div class="mt-10 flex items-center justify-center gap-4 reveal" data-reveal data-reveal-delay="80">
+                <span id="billLabelMonthly" class="text-sm font-medium text-text">Monthly</span>
+                <button id="billToggle" role="switch" aria-checked="false" aria-label="Toggle yearly billing"
+                    class="billing-toggle">
+                    <span class="billing-toggle-knob"></span>
+                </button>
+                <span id="billLabelYearly" class="text-sm font-medium text-muted">
+                    Yearly
+                    <span class="save-badge">save 20%</span>
+                </span>
+            </div>
+
+            <!-- Pricing cards -->
+            <div class="mt-14 grid lg:grid-cols-3 gap-7 items-start">
+
+                <!-- Starter -->
+                <div class="pricing-card reveal" data-reveal data-reveal-delay="0">
+                    <h3 class="font-display font-bold text-xl">Starter</h3>
+                    <p class="mt-2 text-sm text-muted">For small teams shipping their first data-driven habit.</p>
+                    <div class="mt-7 flex items-end gap-1">
+                        <span class="font-display font-extrabold text-4xl price-value" data-monthly="0"
+                            data-yearly="0">$0</span>
+                        <span class="text-muted text-sm mb-1.5">/ month</span>
+                    </div>
+                    <p class="mt-1 text-xs text-muted/70">Free forever, up to 3 seats</p>
+                    <!-- static plan, no billed-monthly/yearly toggle text needed -->
+
+                    <a href="#"
+                        class="mt-8 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold border border-border/80 hover:border-primary/50 transition-colors duration-300">
+                        Start free
+                    </a>
+
+                    <ul class="mt-8 space-y-3.5 text-sm">
+                        <li class="pricing-feature"><span class="check-icon"></span>Up to 3 team seats</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>7-day data history</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Weekly digest email</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Community support</li>
+                    </ul>
+                </div>
+
+                <!-- Growth (recommended) -->
+                <div class="pricing-card pricing-card-featured reveal" data-reveal data-reveal-delay="120">
+                    <div class="recommended-badge">Most teams choose this</div>
+                    <h3 class="font-display font-bold text-xl">Growth</h3>
+                    <p class="mt-2 text-sm text-muted/90">For teams making weekly calls on live product data.</p>
+                    <div class="mt-7 flex items-end gap-1">
+                        <span class="font-display font-extrabold text-4xl price-value" data-monthly="79"
+                            data-yearly="63">$79</span>
+                        <span class="text-sm mb-1.5 text-white/70">/ month</span>
+                    </div>
+                    <p class="mt-1 text-xs text-white/60"><span class="billed-text">Billed monthly</span>, up to 15
+                        seats</p>
+
+                    <a href="#"
+                        class="mt-8 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-bg bg-gradient-to-r from-primary to-secondary btn-glow">
+                        Start free trial
+                    </a>
+
+                    <ul class="mt-8 space-y-3.5 text-sm">
+                        <li class="pricing-feature featured"><span class="check-icon featured"></span>Up to 15 team
+                            seats</li>
+                        <li class="pricing-feature featured"><span class="check-icon featured"></span>90-day data
+                            history</li>
+                        <li class="pricing-feature featured"><span class="check-icon featured"></span>Ask Nova
+                            (natural-language queries)</li>
+                        <li class="pricing-feature featured"><span class="check-icon featured"></span>Cohort explorer
+                        </li>
+                        <li class="pricing-feature featured"><span class="check-icon featured"></span>Priority support
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Scale -->
+                <div class="pricing-card reveal" data-reveal data-reveal-delay="240">
+                    <h3 class="font-display font-bold text-xl">Scale</h3>
+                    <p class="mt-2 text-sm text-muted">For orgs that need governance and room to grow.</p>
+                    <div class="mt-7 flex items-end gap-1">
+                        <span class="font-display font-extrabold text-4xl price-value" data-monthly="249"
+                            data-yearly="199">$249</span>
+                        <span class="text-muted text-sm mb-1.5">/ month</span>
+                    </div>
+                    <p class="mt-1 text-xs text-muted/70"><span class="billed-text">Billed monthly</span>, unlimited
+                        seats</p>
+
+                    <a href="#"
+                        class="mt-8 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold border border-border/80 hover:border-primary/50 transition-colors duration-300">
+                        Talk to sales
+                    </a>
+
+                    <ul class="mt-8 space-y-3.5 text-sm">
+                        <li class="pricing-feature"><span class="check-icon"></span>Unlimited seats</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Unlimited data history</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Forecasting suite</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Data governance & audit logs</li>
+                        <li class="pricing-feature"><span class="check-icon"></span>Dedicated success manager</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="mt-10 text-center text-sm text-muted reveal" data-reveal>
+                Need a custom contract or on-prem deployment? <a href="#" class="text-secondary hover:underline">Talk to
+                    us</a>.
+            </p>
+        </div>
+    </section>

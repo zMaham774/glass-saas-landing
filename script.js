@@ -98,3 +98,53 @@ const counterObserver = new IntersectionObserver(
 );
 
 counters.forEach((el) => counterObserver.observe(el));
+
+// ============ Magnetic button interaction ============
+const magneticBtns = document.querySelectorAll('.btn-magnetic');
+
+magneticBtns.forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+    });
+});
+
+// ============ Pricing billing toggle ============
+const billToggle = document.getElementById('billToggle');
+const billLabelMonthly = document.getElementById('billLabelMonthly');
+const billLabelYearly = document.getElementById('billLabelYearly');
+const priceValues = document.querySelectorAll('.price-value');
+const priceCards = document.querySelectorAll('.pricing-card');
+
+if (billToggle) {
+    billToggle.addEventListener('click', () => {
+        const isYearly = billToggle.getAttribute('aria-checked') === 'true';
+        const next = !isYearly;
+        billToggle.setAttribute('aria-checked', next ? 'true' : 'false');
+
+        billLabelMonthly.classList.toggle('text-text', !next);
+        billLabelMonthly.classList.toggle('text-muted', next);
+        billLabelYearly.classList.toggle('text-text', next);
+        billLabelYearly.classList.toggle('text-muted', !next);
+
+        priceValues.forEach((el) => {
+            const amount = next ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
+            el.style.opacity = '0';
+            setTimeout(() => {
+                el.textContent = '$' + amount;
+                el.style.opacity = '1';
+            }, 120);
+        });
+
+        // update the "Billed monthly/yearly" helper text
+        document.querySelectorAll('.billed-text').forEach((el) => {
+            el.textContent = next ? 'Billed yearly' : 'Billed monthly';
+        });
+    });
+}
